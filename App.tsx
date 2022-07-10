@@ -1,5 +1,5 @@
 import Loading from "./src/components/Loading";
-// 45:00
+// 1:04:30
 export default function App() {
   return <Loading />;
 }
