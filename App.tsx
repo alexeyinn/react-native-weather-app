@@ -1,15 +1,24 @@
 import Loading from "./src/components/Loading";
 import * as Location from "expo-location";
 import { useEffect } from "react";
+import axios from "axios";
 
 // 1:14:30
 export default function App() {
+  const apiKey = "b71aa60c6985f035c25ba94fec60b0f3";
+
+  const getWeather = async (lat: number, long: number) => {
+    const { data } = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`
+    );
+  };
+
   const getLocation = async () => {
     await Location.requestForegroundPermissionsAsync();
     const {
       coords: { latitude, longitude },
     } = await Location.getCurrentPositionAsync();
-    console.log(latitude, longitude);
+    getWeather(latitude, longitude);
   };
 
   useEffect(() => {
