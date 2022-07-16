@@ -1,19 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import React, { useEffect } from "react";
-import * as Location from "expo-location";
 
 const Loading = () => {
-  const getLocation = async () => {
-    await Location.requestForegroundPermissionsAsync();
-    const {
-      coords: { latitude, longitude },
-    } = await Location.getCurrentPositionAsync();
-  };
-
-  useEffect(() => {
-    getLocation();
-  });
-
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Получение погоды...</Text>
