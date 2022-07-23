@@ -3,9 +3,10 @@ import React from "react";
 
 interface IProps {
   temp: number;
+  weather: string;
 }
 
-const Weather = ({ temp }: IProps) => {
+const Weather = ({ temp, weather }: IProps) => {
   return (
     <View style={styles.container}>
       <Text>{Math.round(temp)}</Text>
