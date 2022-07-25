@@ -5,7 +5,7 @@ import axios from "axios";
 import Weather from "./src/components/Weather";
 import { IWeatherApiData } from "./src/interfaces";
 
-// 1:32:00
+// 1:40:00
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [temp, setTemp] = useState(0);
