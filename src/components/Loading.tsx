@@ -1,9 +1,10 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, StatusBar } from "react-native";
 import React, { useEffect } from "react";
 
 const Loading = () => {
   return (
     <View style={styles.container}>
+      <StatusBar barStyle={"dark-content"} />
       <Text style={styles.text}>Получение погоды...</Text>
     </View>
   );
